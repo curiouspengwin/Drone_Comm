@@ -15,7 +15,10 @@ class GcsManager : public QObject {
 public:
     explicit GcsManager(QObject *parent = nullptr) : QObject(parent){
         //Bind to standard GCS port
-        m_socket.bind(QHostAddress::LocalHost, 50000, QUdpSocket::ShareAddress | QUdpSocket::ReuseAddressHint);
+        if (!m_socket.bind(QHostAddress::LocalHost, 50000, QUdpSocket::ShareAddress | QUdpSocket::ReuseAddressHint)) {
+            qWarning() << "Failed to bind GCS socket:" << m_socket.errorString();
+        }
+        // m_socket.bind(QHostAddress::LocalHost, 50000, QUdpSocket::ShareAddress | QUdpSocket::ReuseAddressHint);
         connect(&m_socket, &QUdpSocket::readyRead, this, &GcsManager::processDatagrams);
     }
 
@@ -58,8 +61,10 @@ signals:
 
 private slots:
     void processDatagrams() {
-        mavlink_message_t msg;
-        mavlink_status_t status;
+
+        // Initialize msg and status to avoid garbage data
+        mavlink_message_t msg{};
+        mavlink_status_t status{};
 
         while (m_socket.hasPendingDatagrams()) {
             QByteArray data = m_socket.receiveDatagram().data();

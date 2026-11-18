@@ -107,8 +107,8 @@ void DroneNode::broadcastStateToPeers() {
 
 void DroneNode::readDatagrams(){
     // Each drone thread uses its own MAVLink channel (MAVLINK_COMM_0 is thread-local if we use status struct)
-    mavlink_message_t msg;
-    mavlink_status_t status;
+    mavlink_message_t msg{};
+    mavlink_status_t status{};
 
     while (m_socket->hasPendingDatagrams()){
         QNetworkDatagram datagram = m_socket->receiveDatagram();

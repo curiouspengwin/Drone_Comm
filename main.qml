@@ -43,7 +43,7 @@ ApplicationWindow {
             Repeater {
                 model: gcsManager.drones
                 delegate: Rectangle{
-                    x: (modelData.x % 430)
+                    x: ((modelData.x % 430) + 430) % 430
                     y: Math.max(0, Math.min(160, 80 + modelData.y))
                     width: 20
                     height: 20
