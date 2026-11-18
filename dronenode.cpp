@@ -1,6 +1,5 @@
 #include "dronenode.h"
 #include "packet_struct.h"
-#include <mavlink.h> // Official MAVLink v2 header
 #include <QNetworkDatagram>
 #include <QDebug>
 #include <QThread>
@@ -50,46 +49,12 @@ void DroneNode::start(){
 
 void DroneNode::sendTelemetryToGCS(){
 
-    mavlink_message_t msg;
-    uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
-    uint32_t bootTimeMs = static_cast<uint32_t>(QDateTime::currentMSecsSinceEpoch() & 0xFFFFFFFF);
-
-    // 1. Pack and send MAVLink HEARTBEAT ("I am alive!")
-    mavlink_msg_heartbeat_pack(
-        m_id,                        // sysid (Unique Drone ID)
-        MAV_COMP_ID_AUTOPILOT1,      // compid (Autopilot component)
-        &msg,
-        MAV_TYPE_QUADROTOR,          // Vehicle type
-        MAV_AUTOPILOT_GENERIC,       // Autopilot type
-        MAV_MODE_FLAG_CUSTOM_MODE_ENABLED,
-        0,
-        move ? MAV_STATE_ACTIVE : MAV_STATE_STANDBY
-        );
-
-    uint16_t len = mavlink_msg_to_send_buffer(buffer, &msg);
-    m_socket->writeDatagram(reinterpret_cast<const char*>(buffer), len, QHostAddress::LocalHost, gcsPort);
-
-    // 2. Pack and send MAVLink LOCAL_POSITION_NED (3D Coordinates)
-    // Note: In NED (North-East-Down), altitude up is negative Z, so we pass -m_posZ
-    mavlink_msg_local_position_ned_pack(
-        m_id,
-        MAV_COMP_ID_AUTOPILOT1,
-        &msg,
-        bootTimeMs,
-        m_posX,     // X (North)
-        m_posY,     // Y (East)
-        -m_posZ,    // Z (Down)
-        0.0f, 0.0f, 0.0f // vx, vy, vz (We will add real velocities in Phase 4!)
-        );
-    len = mavlink_msg_to_send_buffer(buffer, &msg);
-    m_socket->writeDatagram(reinterpret_cast<const char*>(buffer), len, QHostAddress::LocalHost, gcsPort);
-
-    // SwarmPacket packet{0xFD, m_id, 1, m_posX, m_posY, m_posZ, 95.0f};
-    // // This is the core serialization step. A C++ struct is stored as raw bits in RAM.
-    // // QByteArray buffer copies it to the buffer
-    // QByteArray buffer(reinterpret_cast<const char*>(&packet), sizeof(packet));
-    // // Send directly to the GCS listening port
-    // m_socket->writeDatagram(buffer, QHostAddress::LocalHost, gcsPort);
+    SwarmPacket packet{0xFD, m_id, 1, m_posX, m_posY, m_posZ, 95.0f};
+    // This is the core serialization step. A C++ struct is stored as raw bits in RAM.
+    // QByteArray buffer copies it to the buffer
+    QByteArray buffer(reinterpret_cast<const char*>(&packet), sizeof(packet));
+    // Send directly to the GCS listening port
+    m_socket->writeDatagram(buffer, QHostAddress::LocalHost, gcsPort);
 }
 
 void DroneNode::broadcastStateToPeers() {
@@ -106,9 +71,6 @@ void DroneNode::broadcastStateToPeers() {
 }
 
 void DroneNode::readDatagrams(){
-    // Each drone thread uses its own MAVLink channel (MAVLINK_COMM_0 is thread-local if we use status struct)
-    mavlink_message_t msg;
-    mavlink_status_t status;
 
     while (m_socket->hasPendingDatagrams()){
         QNetworkDatagram datagram = m_socket->receiveDatagram();

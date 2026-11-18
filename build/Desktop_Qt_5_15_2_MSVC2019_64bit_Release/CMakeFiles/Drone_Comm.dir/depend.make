@@ -89,6 +89,7 @@ CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: Drone_Com
 CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: ..\..\dronenode.h
 CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: ..\..\packet_struct.h
 
+CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\QDateTime
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\QDebug
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\QObject
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\QThread
@@ -111,6 +112,7 @@ CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\Qt
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\qcontainertools_impl.h
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\qcontiguouscache.h
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\qcoreevent.h
+CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\qdatetime.h
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\qdeadlinetimer.h
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\qdebug.h
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\qelapsedtimer.h
