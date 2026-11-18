@@ -116,9 +116,9 @@ void DroneNode::readDatagrams(){
 
 
         // A. Check if it's our temporary D2D SwarmPacket (exact 19 bytes, msgType == 2)
-        if (datagram.data().size() == sizeof(SwarmPacket)){
+        if (data.size() == sizeof(SwarmPacket)){
             // Deserialization. Mapping back to the struct format
-            const auto* packet = reinterpret_cast<const SwarmPacket*>(datagram.data().constData());
+            const auto* packet = reinterpret_cast<const SwarmPacket*>(data.constData());
             if  (packet->magic == 0xFD && packet->msgType == 2 && move){
                 // Decentralized collision avoidance rule:
                 // If a peer gets within 8 meters, nudge away slightly
@@ -129,10 +129,24 @@ void DroneNode::readDatagrams(){
                     m_posX += (dx/dist) * 1.0f;
                     m_posY += (dy/dist) * 1.0f;
                 }
+                continue;
             }
-            if  (packet->msgType == 3){
-                // If received stop command, stop and resume the drone
-                move = !move;
+        }
+
+        // B. Otherwise, parse as a MAVLink v2 message from the GCS!
+        for (int i = 0; i < data.size(); ++i){
+            if (mavlink_frame_char_buffer(&msg, &status, static_cast<uint8_t>(data[i]), &msg, &status) == MAVLINK_FRAMING_OK)
+            {
+                if (msg.msgid == MAVLINK_MSG_ID_COMMAND_LONG) {
+                    mavlink_command_long_t cmd;
+                    mavlink_msg_command_long_decode(&msg, &cmd);
+
+                    // Check if this command is meant for ME and is a Pause/Resume command
+                    if (cmd.target_system == m_id && cmd.command == MAV_CMD_DO_PAUSE_CONTINUE) {
+                        move = !move;
+                        qDebug() << "[Drone" << m_id << "] Received MAVLink Pause/Continue! Moving:" << move;
+                    }
+                }
             }
         }
     }

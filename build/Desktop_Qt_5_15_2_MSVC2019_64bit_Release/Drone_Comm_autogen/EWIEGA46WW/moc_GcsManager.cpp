@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_GcsManager_t {
     QByteArrayData data[7];
-    char stringdata0[65];
+    char stringdata0[71];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,12 +37,12 @@ QT_MOC_LITERAL(1, 11, 13), // "dronesUpdated"
 QT_MOC_LITERAL(2, 25, 0), // ""
 QT_MOC_LITERAL(3, 26, 16), // "processDatagrams"
 QT_MOC_LITERAL(4, 43, 11), // "sendCommand"
-QT_MOC_LITERAL(5, 55, 2), // "id"
-QT_MOC_LITERAL(6, 58, 6) // "drones"
+QT_MOC_LITERAL(5, 55, 8), // "targetId"
+QT_MOC_LITERAL(6, 64, 6) // "drones"
 
     },
     "GcsManager\0dronesUpdated\0\0processDatagrams\0"
-    "sendCommand\0id\0drones"
+    "sendCommand\0targetId\0drones"
 };
 #undef QT_MOC_LITERAL
 
