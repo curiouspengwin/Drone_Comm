@@ -1,7 +1,0 @@
-C:/Users/srinivas.mareddi/Documents/Drone_Comm/build/Desktop_Qt_5_15_2_MSVC2019_64bit_Release/CMakeFiles/Drone_Comm.dir
-C:/Users/srinivas.mareddi/Documents/Drone_Comm/build/Desktop_Qt_5_15_2_MSVC2019_64bit_Release/CMakeFiles/install/local.dir
-C:/Users/srinivas.mareddi/Documents/Drone_Comm/build/Desktop_Qt_5_15_2_MSVC2019_64bit_Release/CMakeFiles/install.dir
-C:/Users/srinivas.mareddi/Documents/Drone_Comm/build/Desktop_Qt_5_15_2_MSVC2019_64bit_Release/CMakeFiles/edit_cache.dir
-C:/Users/srinivas.mareddi/Documents/Drone_Comm/build/Desktop_Qt_5_15_2_MSVC2019_64bit_Release/CMakeFiles/rebuild_cache.dir
-C:/Users/srinivas.mareddi/Documents/Drone_Comm/build/Desktop_Qt_5_15_2_MSVC2019_64bit_Release/CMakeFiles/list_install_components.dir
-C:/Users/srinivas.mareddi/Documents/Drone_Comm/build/Desktop_Qt_5_15_2_MSVC2019_64bit_Release/CMakeFiles/Drone_Comm_autogen.dir
