@@ -35,6 +35,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "C:/Qt/5.15.2/msvc2019_64/include/QtNetwork"
   "C:/Qt/5.15.2/msvc2019_64/include/QtGui"
   "C:/Qt/5.15.2/msvc2019_64/include/QtANGLE"
+  "../../zenoh-c-1.10.2/include"
   )
 
 # Targets to which this target links.

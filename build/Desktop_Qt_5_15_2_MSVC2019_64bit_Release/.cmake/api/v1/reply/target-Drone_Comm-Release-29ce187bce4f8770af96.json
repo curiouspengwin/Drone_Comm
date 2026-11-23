@@ -15,7 +15,8 @@
 		[
 			"add_executable",
 			"install",
-			"target_link_libraries"
+			"target_link_libraries",
+			"include_directories"
 		],
 		"files" : 
 		[
@@ -29,19 +30,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 37,
+				"line" : 46,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 64,
+				"line" : 75,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 46,
+				"line" : 55,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 27,
 				"parent" : 0
 			}
 		]
@@ -96,6 +103,10 @@
 					"path" : "C:/Users/srinivas.mareddi/Documents/Drone_Comm/build/Desktop_Qt_5_15_2_MSVC2019_64bit_Release/Drone_Comm_autogen/include"
 				},
 				{
+					"backtrace" : 4,
+					"path" : "C:/Users/srinivas.mareddi/Documents/Drone_Comm/mavlink/common"
+				},
+				{
 					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "C:/Qt/5.15.2/msvc2019_64/include"
@@ -139,6 +150,11 @@
 					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "C:/Qt/5.15.2/msvc2019_64/include/QtANGLE"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "C:/Users/srinivas.mareddi/Documents/Drone_Comm/zenoh-c-1.10.2/include"
 				}
 			],
 			"language" : "CXX",
@@ -187,6 +203,10 @@
 			},
 			{
 				"fragment" : "C:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Quick.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "..\\..\\zenoh-c-1.10.2\\lib\\zenohc.dll.lib",
 				"role" : "libraries"
 			},
 			{

@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     for (uint8_t id = 1; id <= NUM_DRONES; ++id){
         QThread *thread = new QThread(&app);
         // A child cannot exist on a different thread from a parent.
-        DroneNode *drone = new DroneNode(id, true);
+        DroneNode *drone = new DroneNode(id);
         // parent = nullptr is required for moveToThread.
         drone->moveToThread(thread);
 

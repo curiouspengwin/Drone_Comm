@@ -250,6 +250,14 @@ CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: ..\..\mav
 CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: ..\..\mavlink\standard\mavlink_msg_autopilot_version.h
 CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: ..\..\mavlink\standard\mavlink_msg_global_position_int.h
 CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: ..\..\mavlink\standard\standard.h
+CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh.h
+CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_commons.h
+CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_concrete.h
+CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_configure.h
+CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_constants.h
+CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_macros.h
+CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_memory.h
+CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_opaque.h
 CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\QMap
 CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\QObject
 CMakeFiles\Drone_Comm.dir\Drone_Comm_autogen\mocs_compilation.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\QTimer
@@ -582,6 +590,14 @@ CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: ..\..\mavlink\protocol.h
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: ..\..\mavlink\standard\mavlink_msg_autopilot_version.h
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: ..\..\mavlink\standard\mavlink_msg_global_position_int.h
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: ..\..\mavlink\standard\standard.h
+CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh.h
+CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_commons.h
+CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_concrete.h
+CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_configure.h
+CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_constants.h
+CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_macros.h
+CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_memory.h
+CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_opaque.h
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\QDateTime
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\QDebug
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\QObject
@@ -667,7 +683,6 @@ CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\Qt
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtNetwork\qudpsocket.h
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: ..\..\dronenode.cpp
 CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: ..\..\dronenode.h
-CMakeFiles\Drone_Comm.dir\dronenode.cpp.obj: ..\..\packet_struct.h
 
 CMakeFiles\Drone_Comm.dir\main.cpp.obj: ..\..\mavlink\checksum.h
 CMakeFiles\Drone_Comm.dir\main.cpp.obj: ..\..\mavlink\common\common.h
@@ -916,6 +931,14 @@ CMakeFiles\Drone_Comm.dir\main.cpp.obj: ..\..\mavlink\protocol.h
 CMakeFiles\Drone_Comm.dir\main.cpp.obj: ..\..\mavlink\standard\mavlink_msg_autopilot_version.h
 CMakeFiles\Drone_Comm.dir\main.cpp.obj: ..\..\mavlink\standard\mavlink_msg_global_position_int.h
 CMakeFiles\Drone_Comm.dir\main.cpp.obj: ..\..\mavlink\standard\standard.h
+CMakeFiles\Drone_Comm.dir\main.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh.h
+CMakeFiles\Drone_Comm.dir\main.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_commons.h
+CMakeFiles\Drone_Comm.dir\main.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_concrete.h
+CMakeFiles\Drone_Comm.dir\main.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_configure.h
+CMakeFiles\Drone_Comm.dir\main.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_constants.h
+CMakeFiles\Drone_Comm.dir\main.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_macros.h
+CMakeFiles\Drone_Comm.dir\main.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_memory.h
+CMakeFiles\Drone_Comm.dir\main.cpp.obj: ..\..\zenoh-c-1.10.2\include\zenoh_opaque.h
 CMakeFiles\Drone_Comm.dir\main.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\QMap
 CMakeFiles\Drone_Comm.dir\main.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\QObject
 CMakeFiles\Drone_Comm.dir\main.cpp.obj: C:\Qt\5.15.2\msvc2019_64\include\QtCore\QThread

@@ -11,6 +11,7 @@
 class GcsManager : public QObject {
     Q_OBJECT
     Q_PROPERTY(QVariantList drones READ drones NOTIFY dronesUpdated);
+    Q_PROPERTY(QVariantList droneIds READ droneIds NOTIFY droneIdsUpdated)
 
 public:
     explicit GcsManager(QObject *parent = nullptr) : QObject(parent){
@@ -29,6 +30,14 @@ public:
             list.append(droneData);
         }
         return list;
+    }
+
+    QVariantList droneIds() const {
+        QVariantList ids;
+        for (int id : m_drones.keys()) {
+            ids.append(id);
+        }
+        return ids;
     }
 
     Q_INVOKABLE void sendCommand(int targetId){
@@ -58,6 +67,7 @@ public:
 
 signals:
     void dronesUpdated();
+    void droneIdsUpdated(); // Add this
 
 private slots:
     void processDatagrams() {
@@ -86,6 +96,7 @@ private slots:
                         newDrone["z"] = 0.0f;
                         newDrone["active"] = true;
                         m_drones[sysid] = newDrone;
+                        emit droneIdsUpdated();
                     }
 
                     // Handle specific MAVLink messages
