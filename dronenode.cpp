@@ -5,7 +5,6 @@
 #include <QDebug>
 #include <QThread>
 #include <QDateTime>
-// #include <cstring>
 #include <cmath>
 
 // C-style callback triggered by Zenoh whenever ANY drone publishes to "swarm/drone/*/pose"
