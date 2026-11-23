@@ -132,6 +132,15 @@ CMakeLists.txt.user*
 
 *.Release
 
+# Build directories
+build/
+build-*/
+debug/
+release/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
 
 
 # Python byte code
@@ -143,18 +152,17 @@ CMakeLists.txt.user*
 # Binaries
 
 # --------
-
-*.dll
-
+*.o
+*.obj
 *.exe
+*.dll
+*.so
+*.dylib
+*.app
 
 
 
 # Directories with generated files
-
-.moc/
-
-.obj/
 
 .pch/
 
@@ -166,20 +174,6 @@ CMakeLists.txt.user*
 
 /.qtcreator/
 
-# Qt Creator local user settings (causes constant timestamp/path changes)
-*.pro.user*
-CMakeLists.txt.user*
-.qtc_clangd/
-
-# Build directories
-build/
-build-*/
-debug/
-release/
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-
 # Generated Qt & C++ files
 Makefile*
 *.moc
@@ -189,11 +183,3 @@ ui_*.h
 qrc_*.cpp
 *.qm
 
-# Compiled binaries and object files
-*.o
-*.obj
-*.exe
-*.dll
-*.so
-*.dylib
-*.app
