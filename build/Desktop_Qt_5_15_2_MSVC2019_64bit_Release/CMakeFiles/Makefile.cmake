@@ -63,6 +63,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.16.0-rc2/CMakeRCCompiler.cmake"
   "CMakeFiles/3.16.0-rc2/CMakeSystem.cmake"
   "../../qml.qrc"
+  "../../zenoh-c-1.10.2/lib/cmake/zenohc/zenohcConfig.cmake"
+  "../../zenoh-c-1.10.2/lib/cmake/zenohc/zenohcConfigVersion.cmake"
   "C:/cmake-3.16.0-rc2-win64-x64/share/cmake-3.16/Modules/CMakeCXXInformation.cmake"
   "C:/cmake-3.16.0-rc2-win64-x64/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake"
   "C:/cmake-3.16.0-rc2-win64-x64/share/cmake-3.16/Modules/CMakeGenericSystem.cmake"

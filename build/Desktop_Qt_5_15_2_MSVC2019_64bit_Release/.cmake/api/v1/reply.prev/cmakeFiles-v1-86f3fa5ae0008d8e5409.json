@@ -304,6 +304,12 @@
 			"path" : "C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Quick/Qt5Quick_QSGD3D12Adaptation.cmake"
 		},
 		{
+			"path" : "zenoh-c-1.10.2/lib/cmake/zenohc/zenohcConfigVersion.cmake"
+		},
+		{
+			"path" : "zenoh-c-1.10.2/lib/cmake/zenohc/zenohcConfig.cmake"
+		},
+		{
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "C:/cmake-3.16.0-rc2-win64-x64/share/cmake-3.16/Modules/GNUInstallDirs.cmake"

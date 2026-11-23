@@ -11,6 +11,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Quick)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Quick)
+# find_package(zenohc REQUIRED)
+
+# target_link_libraries(your_app PRIVATE zenohc::lib)
+
+# Tell CMake where to find the extracted Zenoh package
+list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/zenoh-c-1.10.2")
+find_package(zenohc REQUIRED)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -46,7 +53,9 @@ else()
 endif()
 
 target_link_libraries(${PROJECT_NAME}
-  PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick)
+  PRIVATE Qt${QT_VERSION_MAJOR}::Core
+  Qt${QT_VERSION_MAJOR}::Quick
+  zenohc::lib)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
@@ -71,3 +80,9 @@ if(QT_VERSION_MAJOR EQUAL 6)
     qt_import_qml_plugins(${PROJECT_NAME})
     qt_finalize_executable(${PROJECT_NAME})
 endif()
+
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    "${CMAKE_CURRENT_SOURCE_DIR}/zenoh-c-1.10.2/bin/zenohc.dll"
+    $<TARGET_FILE_DIR:${PROJECT_NAME}>
+)

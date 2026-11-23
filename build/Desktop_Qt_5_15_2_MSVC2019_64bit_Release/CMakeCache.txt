@@ -291,6 +291,9 @@ Qt5Quick_DIR:PATH=C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Quick
 //The directory containing a CMake configuration file for Qt5.
 Qt5_DIR:PATH=C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5
 
+//The directory containing a CMake configuration file for zenohc.
+zenohc_DIR:PATH=C:/Users/srinivas.mareddi/Documents/Drone_Comm/zenoh-c-1.10.2/lib/cmake/zenohc
+
 
 ########################
 # INTERNAL cache entries

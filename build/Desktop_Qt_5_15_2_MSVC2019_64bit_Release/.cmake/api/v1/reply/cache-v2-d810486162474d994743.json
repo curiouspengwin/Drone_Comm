@@ -1472,6 +1472,18 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "C:/Program Files (x86)/Drone_Comm"
+		},
+		{
+			"name" : "zenohc_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for zenohc."
+				}
+			],
+			"type" : "PATH",
+			"value" : "C:/Users/srinivas.mareddi/Documents/Drone_Comm/zenoh-c-1.10.2/lib/cmake/zenohc"
 		}
 	],
 	"kind" : "cache",

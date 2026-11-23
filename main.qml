@@ -43,7 +43,7 @@ ApplicationWindow {
             Repeater {
                 model: gcsManager.drones
                 delegate: Rectangle{
-                    x: (modelData.x % 430)
+                    x: ((modelData.x % 430) + 430) % 430
                     y: Math.max(0, Math.min(160, 80 + modelData.y))
                     width: 20
                     height: 20
@@ -62,13 +62,14 @@ ApplicationWindow {
         }
 
         // Dynamic Control Buttons
+        // Created every 500ms. Do not want this behaviour
         Row {
             spacing: 10
             Repeater {
-                model: gcsManager.drones
+                model: gcsManager.droneIds
                 delegate: CustomButton {
-                    text: "Toggle D" + modelData.id
-                    onClicked: gcsManager.sendCommand(modelData.id)
+                    text: "Toggle D" + modelData
+                    onClicked: gcsManager.sendCommand(modelData)
                 }
             }
         }

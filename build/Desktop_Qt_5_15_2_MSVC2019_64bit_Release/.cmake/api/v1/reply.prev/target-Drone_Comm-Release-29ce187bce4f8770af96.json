@@ -30,25 +30,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 39,
+				"line" : 46,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 66,
+				"line" : 75,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 48,
+				"line" : 55,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 20,
+				"line" : 27,
 				"parent" : 0
 			}
 		]
@@ -150,6 +150,11 @@
 					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "C:/Qt/5.15.2/msvc2019_64/include/QtANGLE"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "C:/Users/srinivas.mareddi/Documents/Drone_Comm/zenoh-c-1.10.2/include"
 				}
 			],
 			"language" : "CXX",
@@ -198,6 +203,10 @@
 			},
 			{
 				"fragment" : "C:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Quick.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "..\\..\\zenoh-c-1.10.2\\lib\\zenohc.dll.lib",
 				"role" : "libraries"
 			},
 			{
