@@ -67,7 +67,7 @@ public:
 
 signals:
     void dronesUpdated();
-    void droneIdsUpdated(); // Add this
+    void droneIdsUpdated();
 
 private slots:
     void processDatagrams() {
