@@ -5,6 +5,7 @@
 #include <QDebug>
 #include <QThread>
 #include <QDateTime>
+#include <QElapsedTimer>
 #include <cmath>
 
 // C-style callback triggered by Zenoh whenever ANY drone publishes to "swarm/drone/*/pose"
@@ -119,13 +120,20 @@ void DroneNode::onPeerPoseReceived(uint8_t peerId, float px, float py, float pz)
     }
 }
 
+static QElapsedTimer timer;
+
+
 void DroneNode::updatePhysicsAndSwarm(){
     const float dt = 0.05f; //50ms time step
     QVector3D desiredVel(0.0f,0.0f,0.0f);
 
+    if (!timer.isValid()) timer.start();
+
+
     if (move) {
+        float t = timer.elapsed() * 0.0005f;
         // 1. Orbit Goal: Gently fly in a 3D figure-eight / orbit around the origin
-        float t = QDateTime::currentMSecsSinceEpoch() * 0.0005f;
+        // double t = QDateTime::currentMSecsSinceEpoch() * 0.0005f;
         QVector3D orbitTarget(std::cos(t) * 35.0f, std::sin(t) * 35.0f, 15.0f + std::sin(t * 2.0f) * 5.0f);
         QVector3D toTarget = (orbitTarget - m_pos).normalized() * 6.0f; // 6 m/s cruise speed
 
