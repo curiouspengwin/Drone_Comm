@@ -40,9 +40,9 @@ ApplicationWindow {
         }
 
         DirectionalLight {
-            eulerRotation.x: -45
-            eulerRotation.y: 30
-            brightness: 1.5
+            eulerRotation: Qt.vector3d(-45, 30, 0)
+            color: "#FFF4E0"
+            brightness: 100
         }
 
         // Ground Plane (Flight Arena Floor)
@@ -58,30 +58,38 @@ ApplicationWindow {
 
         // Dynamic 3D Drone Fleet
         Repeater3D {
-            model: gcsManager.drones
+            model: gcsManager.droneModel
 
             Node {
                 // Map Aviation (X, Y, Z-up) -> 3D Graphics (X, Y-up, Z)
-                position: Qt.vector3d(modelData.x, modelData.z, modelData.y)
+                required property int droneId
+                required property real posX
+                required property real posY
+                required property real posZ
+                required property real active
+
+                position: Qt.vector3d(posX, posZ, posY)
 
                 // Drone 3D Body
                 Model {
                     source: "#Sphere"
-                    scale: Qt.vector3d(0.03, 0.015, 0.03) // Sleek saucer/drone shape
+                    scale: Qt.vector3d(0.06, 0.06, 0.06) // Sleek saucer/drone shape
                     materials: PrincipledMaterial {
-                        baseColor: Qt.hsla((modelData.id * 0.22) % 1.0, 0.8, 0.55, 1.0)
-                        metalness: 0.3
-                        roughness: 0.4
+                        // baseColor: Qt.hsla((droneId * 0.22) % 1.0, 0.8, 0.55, 1.0)
+                        baseColor: active ? "#0BE881" : "#FF5E57"
+                        // emissiveFactor: Qt.vector3d(0.3, 0.3, 0.3)
+                        metalness: 0.5
+                        roughness: 1
                     }
                 }
 
                 // Vertical Altitude Drop-Line down to ground (y = 0)
                 Model {
                     source: "#Cylinder"
-                    position: Qt.vector3d(0, -modelData.z / 2, 0)
-                    scale: Qt.vector3d(0.002, modelData.z / 100.0, 0.002)
+                    position: Qt.vector3d(0, -posZ / 2, 0)
+                    scale: Qt.vector3d(0.004, posZ / 100.0, 0.004)
                     materials: PrincipledMaterial {
-                        baseColor: "#7F8FA6"
+                        baseColor: "#A4B0BE"
                         opacity: 0.5
                     }
                 }
@@ -106,7 +114,7 @@ ApplicationWindow {
             spacing: 10
 
             Text {
-                text: "Swarm 3D HUD (" + gcsManager.drones.length + " Drones)"
+                text: "Swarm 3D HUD (" + gcsManager.droneModel.count + " Drones)"
                 color: "white"
                 font.bold: true
                 font.pixelSize: 16
@@ -119,23 +127,30 @@ ApplicationWindow {
             }
 
             Repeater {
-                model: gcsManager.drones
+                model: gcsManager.droneModel
                 delegate: Row {
+
+                    required property int droneId
+                    required property real posX
+                    required property real posY
+                    required property real posZ
+                    required property bool active
+
                     spacing: 10
                     Text {
                         width: 200
-                        text: "D" + modelData.id +
-                              " (" + modelData.x.toFixed(0) + ", " +
-                              modelData.y.toFixed(0) + ", " +
-                              modelData.z.toFixed(0) + "m)"
-                        color: modelData.active ? "#0BE881" : "#FF5E57"
+                        text: "D" + droneId +
+                              " (" + posX.toFixed(0) + ", " +
+                              posY.toFixed(0) + ", " +
+                              posZ.toFixed(0) + "m)"
+                        color: active ? "#0BE881" : "#FF5E57"
                         font.pixelSize: 13
                     }
                     CustomButton {
                         width: 75
                         height: 24
-                        text: modelData.active ? "Hover" : "Resume"
-                        onClicked: gcsManager.sendCommand(modelData.id)
+                        text: active ? "Hover" : "Resume"
+                        onClicked: gcsManager.sendCommand(droneId)
                     }
                 }
             }

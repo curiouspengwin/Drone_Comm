@@ -152,6 +152,7 @@ void DroneNode::updatePhysicsAndSwarm(){
         }
 
         desiredVel = toTarget + separation + cohesion;
+        // desiredVel = orbitTarget;
     }
     // If move == false (Paused by GCS), desiredVel stays (0,0,0), so the drone smoothly brakes to a hover!
     // Apply inertia / smooth acceleration (lerp current velocity toward desired velocity)

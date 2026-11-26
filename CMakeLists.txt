@@ -48,6 +48,7 @@ else()
           packet_struct.h
           dronenode.h dronenode.cpp
           GcsManager.h
+          DroneModel.h
         )
     endif()
 endif()
